@@ -56,7 +56,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/uek223-extended_backend:latest
-
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -70,4 +69,4 @@ jobs:
           source: ./docker-compose-pipeline.yml
           target: /home/danny/docker-compose.yaml
       - name: run docker compose
-        command: docker-compose up -d
+        run: docker-compose up -d
