@@ -14,9 +14,9 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@master
         with:
-          host: 185.229.90.245
-          username: danny
-          password: admin123
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
           port: 22
           script: echo "Hello World"
   static-check:
@@ -24,6 +24,6 @@ jobs:
     steps:
       - name: run sonarqube
         run: |
-          ../../gradlew sonarqube --info -Dsonar.projectKey=uk223
+          ./gradlew sonarqube --info -Dsonar.projectKey=uk223
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
