@@ -7,7 +7,7 @@ services:
 
     restart: unless-stopped
     image: dannymischa/uek223-extended_frontend:latest
-    container_name: frontend
+    container_name: danny-frontend
     depends_on:
       - danny-backend
     ports:
@@ -18,7 +18,7 @@ services:
 
     restart: unless-stopped
     image: dannymischa/uek223-extended_backend:latest
-    container_name: backend
+    container_name: danny-backend
     ports:
       - "8080:8080"
 
