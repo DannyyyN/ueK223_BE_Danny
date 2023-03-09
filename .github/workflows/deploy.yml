@@ -31,9 +31,4 @@ jobs:
           script: |
             docker compose down &&
             docker compose pull &&
-            docker compose up -d 
-
-#jobs:
-#  runs-on: ubuntu-latest
-#  steps:
-#    - name:
+            docker compose up -d --remove-orphans
