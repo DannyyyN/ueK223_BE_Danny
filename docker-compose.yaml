@@ -2,30 +2,21 @@ version: '3.7'
 
 services:
   danny-frontend:
-    mem_limit: 128m
-    cpus: 0.1
-
     restart: unless-stopped
     image: dannymischa/uek223-extended_frontend:latest
     container_name: danny-frontend
     depends_on:
       - danny-backend
     ports:
-      - "3000:80"
+      - "8012:80"
   danny-backend:
-    mem_limit: 512M
-    cpus: 0.2
-
     restart: unless-stopped
     image: dannymischa/uek223-extended_backend:latest
     container_name: danny-backend
     ports:
-      - "8080:8080"
+      - "8097:8080"
 
   danny-db:
-    mem_limit: 128m
-    cpus: 0.05
-
     restart: unless-stopped
     image: 'postgres:10-alpine'
     container_name: danny-db
