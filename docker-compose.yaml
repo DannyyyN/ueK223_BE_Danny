@@ -6,13 +6,13 @@ services:
     image: dannymischa/uek223-extended_frontend:latest
     container_name: danny-frontend
     depends_on:
-      - danny-backend
+      - dannyBackend
     ports:
       - "8012:80"
-  danny-backend:
+  dannyBackend:
     restart: unless-stopped
     image: dannymischa/uek223-extended_backend:latest
-    container_name: danny-backend
+    container_name: dannyBackend
     ports:
       - "8097:8080"
 
