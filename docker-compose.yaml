@@ -30,7 +30,7 @@ services:
     image: 'postgres:10-alpine'
     container_name: danny-db
     ports:
-      - '5432:5432'
+      - '5432'
     environment:
       POSTGRES_PASSWORD: 'postgres'
       POSTGRES_USER: 'postgres'
